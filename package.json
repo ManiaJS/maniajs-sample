@@ -1,0 +1,8 @@
+{
+  "name": "maniajs-sample",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "async": "^1.5.2"
+  }
+}

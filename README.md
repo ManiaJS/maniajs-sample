@@ -1,0 +1,1 @@
+# ManiaJS Sample Plugin

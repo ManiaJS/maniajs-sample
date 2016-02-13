@@ -38,9 +38,19 @@ export default class extends Plugin {
       });
 
       // Test by inserting Sample object.
-      return this.models['Sample'].create({
-        sample: 'Test'
-      }).save();
+      this.models['Sample'].create({
+        sample: 'test'
+      }).save()
+        .then(() => {
+          console.log("SAVED!");
+
+          return resolve();
+        })
+        .catch((err) => {
+          console.error(err.stack);
+
+          return reject(err);
+        });
     });
   }
 }

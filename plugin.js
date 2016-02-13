@@ -30,6 +30,11 @@ export default class extends Plugin {
     return new Promise((resolve, reject) => {
       this.app.log.debug("Testing loading of plugin.");
 
+      // Event
+      this.server.on('player.chat', (info) => {
+        console.log("Player '"+info.login+"' chat: '"+info.text+"'");
+      });
+
       return resolve();
     });
   }

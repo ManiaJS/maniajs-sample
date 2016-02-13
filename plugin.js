@@ -1,6 +1,7 @@
 'use strict';
 
 import * as Package from './package.json';
+import * as path from 'path';
 
 import Plugin from 'maniajs-plugin';
 
@@ -15,6 +16,7 @@ export default class extends Plugin {
     // Set the package stuff into the plugin context.
     this.name = Package.name;
     this.version = Package.version;
+    this.directory = __dirname;
 
     // Add dependencies, enter module full id's (mostly npm package names) here.
     this.dependencies = [];
@@ -29,12 +31,6 @@ export default class extends Plugin {
   init() {
     return new Promise((resolve, reject) => {
       this.app.log.debug('Testing loading of plugin.');
-
-      // Define models
-      this.on('core.database.define', (sequelize) => {
-        console.log("SEQUELIZE");
-        console.log(sequelize);
-      });
 
       // Event
       this.server.on('player.chat', (info) => {

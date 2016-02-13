@@ -37,7 +37,10 @@ export default class extends Plugin {
         console.log('Player '+info.login+' chat: '+info.text);
       });
 
-      return resolve();
+      // Test by inserting Sample object.
+      return this.models['Sample'].create({
+        sample: 'Test'
+      }).save();
     });
   }
 }

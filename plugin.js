@@ -2,20 +2,24 @@
 
 import * as Package from './package.json';
 
-import Plugin       from 'maniajs-plugin';
+import Plugin from 'maniajs-plugin';
 
 /**
  * Sample Plugin, For testing and example purpose.
  */
-export default new Plugin({
-  name: Package.name,
-  version: Package.version,
+export default class extends Plugin {
 
-  dependencies: [], // Depends on the following plugins. Plugins defined here will be init first, before this plugin.
+  constructor() {
+    super();
 
-  // this.app will be the core app interface
+    this.name = Package.name;
+    this.version = Package.version;
+
+    this.dependencies = [];
+  }
 
   init() {
+    console.log("test");
     this.app.log.debug("Testing loading of plugin.");
   }
-});
+}

@@ -11,6 +11,8 @@ export default new Plugin({
   name: Package.name,
   version: Package.version,
 
+  dependencies: [], // Depends on the following plugins. Plugins defined here will be init first, before this plugin.
+
   // this.app will be the core app interface
 
   init() {

@@ -28,11 +28,17 @@ export default class extends Plugin {
    */
   init() {
     return new Promise((resolve, reject) => {
-      this.app.log.debug("Testing loading of plugin.");
+      this.app.log.debug('Testing loading of plugin.');
+
+      // Define models
+      this.on('core.database.define', (sequelize) => {
+        console.log("SEQUELIZE");
+        console.log(sequelize);
+      });
 
       // Event
       this.server.on('player.chat', (info) => {
-        console.log("Player '"+info.login+"' chat: '"+info.text+"'");
+        console.log('Player '+info.login+' chat: '+info.text);
       });
 
       return resolve();

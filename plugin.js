@@ -38,9 +38,9 @@ export default class extends Plugin {
       });
 
       // Test by inserting Sample object.
-      this.models['Sample'].create({
-        sample: 'test'
-      }).save()
+      let sample = this.models['Sample'].create({
+          sample: 'testing'
+        })
         .then(() => {
           console.log("SAVED!");
 

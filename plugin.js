@@ -14,6 +14,6 @@ export default new Plugin({
   // this.app will be the core app interface
 
   init() {
-    this.app.log.debug("Testing");
+    this.app.log.debug("Testing loading of plugin.");
   }
 });

@@ -1,8 +1,7 @@
 {
-  "name": "maniajs-sample",
+  "name": "maniajs-plugin-sample",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "dependencies": {
-    "async": "^1.5.2"
   }
 }

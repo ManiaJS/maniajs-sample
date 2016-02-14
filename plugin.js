@@ -22,6 +22,14 @@ export default class extends Plugin {
     this.dependencies = [];
   }
 
+  // this.config      = Plugin configuration, defined in the configuration file.
+  // this.app         = App context
+  // this.maps        = Maps game flow
+  // this.players     = Players game flow
+  // this.server      = Server itself.
+  // this.models      = Plugin Models (only this plugin)
+  // this.app.models  = Global Models, core models.
+
   /**
    * Init will be run once the plugin can register everything at the core.
    * From this point the {this.app} and all other injected variables are available.
@@ -38,6 +46,9 @@ export default class extends Plugin {
       });
 
       // Test by inserting Sample object.
+      return resolve();
+
+      // SAMPLE FOR MODELS.:
       let sample = this.models['Sample'].create({
           sample: 'testing'
         })

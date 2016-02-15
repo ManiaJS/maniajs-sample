@@ -45,6 +45,8 @@ export default class extends Plugin {
         console.log('Player '+info.login+' chat: '+info.text);
       });
 
+      console.log('Sample Plugin Init called!');
+
       // Test by inserting Sample object.
       return resolve();
 
